@@ -391,6 +391,10 @@
     .tips-list li { min-height: 130px; padding: 20px; background: #14221b; border: 1px solid #3a4f44; border-radius: var(--radius); color: #e1eae5; }
     .tips-list li::before { content: ""; display: block; width: 28px; height: 5px; margin-bottom: 16px; background: var(--ferry); }
     .source-list { margin-top: 28px; padding-top: 24px; border-top: 1px solid #395047; color: #b9c9c1; font-size: 13px; }
+    .photo-credits { margin-top: 18px; }
+    .photo-credits summary { min-height: 44px; display: flex; align-items: center; color: var(--white); cursor: pointer; font-weight: 800; }
+    .photo-credit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; margin-top: 8px; }
+    .photo-credit-grid a { color: #d9e7e0; text-decoration-color: #6c887a; text-underline-offset: 3px; }
 
     footer { padding: 54px 0 calc(48px + env(safe-area-inset-bottom)); background: #07100c; color: var(--white); }
     .footer-inner { display: flex; justify-content: space-between; gap: 28px; align-items: end; }
@@ -419,7 +423,7 @@
       .button { width: 100%; }
       .section { padding: 58px 0; }
       h2 { font-size: 34px; }
-      .quick-grid, .notice-grid, .pretrip-todo, .tips-list { grid-template-columns: 1fr; }
+      .quick-grid, .notice-grid, .pretrip-todo, .tips-list, .photo-credit-grid { grid-template-columns: 1fr; }
       .quick-cell { min-height: 150px; }
       .todo-control { grid-template-columns: 26px 1fr; }
       .todo-deadline { grid-column: 2; }
@@ -661,8 +665,19 @@
   "disclaimer": "本页全部信息（天气、证件、车次、酒店、餐厅、景点、门票、价格、营业时间、评分、活动及口岸安排等）均为 AI 基于公开资料及旅行服务搜索结果整理的参考建议，可能不准确、调整或已过时，不保证与实时情况一致；请务必在出入境、12306、景点、交通、订票订房及地图等官方渠道核实后再做决定或前往。",
   "dataSources": [
     {"name":"FlyAI / 飞猪旅行服务","scope":"高铁候选、酒店候选、部分景点图片与门票跳转","realtime":true},
-    {"name":"Wikipedia / Wikimedia 地理资料","scope":"景点 WGS-84 坐标交叉参考","realtime":false},
+    {"name":"Wikipedia / Wikimedia Commons","scope":"景点 WGS-84 坐标交叉参考及可复用实景图片","realtime":false},
     {"name":"公开官方渠道","scope":"天气、证件、口岸、营业时间的静态整理依据","realtime":false}
+  ],
+  "photoCredits": [
+    {"place":"长沙南站","author":"Doraemon.tvb","license":"CC BY-SA 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Changsha_South_Railway_Station.jpg"},
+    {"place":"大馆警察总部大楼","author":"Wpcpey","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Tai_Kwun_Police_Headquarters_Block_201806.jpg"},
+    {"place":"中环至半山自动扶梯","author":"LN9267","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Central-Mid-Levels_Escalator_and_Walkway_System_15-07-2015(2).jpg"},
+    {"place":"九龙寨城公园","author":"CPJoseph","license":"CC BY-SA 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Kowloon_Walled_City_Park_九龍寨城_01.jpg"},
+    {"place":"庙街夜市","author":"Diego Delso","license":"CC BY-SA 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Mercado_en_Temple_St.,_Hong_Kong,_2013-08-11,_DD_01.JPG"},
+    {"place":"港珠澳大桥西段","author":"N509FZ","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:West_section_of_Hong_Kong-Zhuhai-Macau_Bridge_(20180902174105).jpg"},
+    {"place":"龙环葡韵住宅式博物馆","author":"LN9267","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Taipa_Houses_Museum_22-08-2023(7).jpg"},
+    {"place":"黑沙海滩","author":"LN9267","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Hac_Sa_Beach_19-02-2023.jpg"},
+    {"place":"珠海站 B 口","author":"Tim Wu","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Entrance_B,_Zhuhai_Railway_Station_20260110.jpg"}
   ],
   "tips": [
     "10 月 1 日香港国庆活动与烟花安排须等官方公告；若尖沙咀实施人流管制，提前在海旁选定位置，不跨区追烟花。",
@@ -685,7 +700,7 @@
       "date":"2026-10-01","weekday":"周四","theme":"抵港 · 西九文化与维港夜色",
       "tips":["早班高铁抵港后只安排九龙一侧，避免第一天跨海赶场。","烟花若未官宣或人流管制，20:00 看幻彩咏香江后直接回酒店。"],
       "slots":[
-        {"period":"morning","name":"长沙南 → 香港西九龙","time":"07:00–12:15","lat":22.3034,"lng":114.1646,"photo":"","rating":4.7,"review":"G6113 直达抵港，西九龙站内完成出入境；出站后先寄存或放下行李，再开始步行线。","openingHours":"建议 06:00 前抵达长沙南","ticketPrice":"二等座当前参考 ¥535/人","transport":{"mode":"高铁 G6113","fare":"约 ¥535/人","duration":"约 3小时51分","actionLink":{"label":"查看车次","url":"https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3VwL3u"}},"needsBooking":true,"leadDays":15},
+        {"period":"morning","name":"长沙南 → 香港西九龙","time":"07:00–12:15","lat":22.3034,"lng":114.1646,"photo":"assets/photos/changsha-south.jpg","rating":4.7,"review":"G6113 直达抵港，西九龙站内完成出入境；出站后先寄存或放下行李，再开始步行线。","openingHours":"建议 06:00 前抵达长沙南","ticketPrice":"二等座当前参考 ¥535/人","transport":{"mode":"高铁 G6113","fare":"约 ¥535/人","duration":"约 3小时51分","actionLink":{"label":"查看车次","url":"https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3VwL3u"}},"needsBooking":true,"leadDays":15},
         {"period":"noon","name":"M+ · 西九文化区","time":"14:00–17:00","lat":22.3004,"lng":114.1596,"photo":"https://img.alicdn.com/imgextra/i4/6000000004676/O1CN01TUlCkl5bPjIA9Q1G_!!6000000004676-0-fliggyimage.jpg","rating":4.6,"review":"抵港后的室内缓冲站，建筑、视觉文化展览与海滨平台连成一体，适合避开午后热度。","openingHours":"通常 10:00–18:00，具体以当日公告为准","ticketPrice":"当前搜索成人票约 ¥162 起","transport":{"mode":"从西九龙站步行 / 短程出租车","fare":"步行免费","duration":"约 15–25 分钟"},"actionLink":{"label":"查看门票","url":"https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0tq2EE"},"needsBooking":true,"leadDays":7},
         {"period":"evening","name":"尖沙咀海滨 · 星光大道","time":"17:30–21:30","lat":22.293016,"lng":114.17415,"photo":"https://img.alicdn.com/tfscom/TB1fBOrK1L2gK0jSZFmSuw7iXXa","rating":4.8,"review":"从日落走到亮灯，维港天际线是整趟旅程最自然的开场；国庆烟花只在官方确认后纳入。","openingHours":"海滨全天开放；灯光秀通常 20:00","ticketPrice":"免费","transport":{"mode":"西九文化区步行 / 巴士到尖沙咀","fare":"约 HK$6–15","duration":"约 20–30 分钟"},"seasonal":"2026 国庆烟花与特别交通安排待官方公告","needsBooking":false,"leadDays":0}
       ],
@@ -698,8 +713,8 @@
       "date":"2026-10-02","weekday":"周五","theme":"港岛 · 旧警署、坡城与山顶黄昏",
       "tips":["中环坡度大，穿防滑鞋；半山扶梯上午下行、约 10:20 后上行，方向以现场为准。","山顶排队失控时改乘 15 号巴士上山，保留缆车作为下山备选。"],
       "slots":[
-        {"period":"morning","name":"中环街市 · 大馆","time":"09:00–12:00","lat":22.2813,"lng":114.154,"photo":"","rating":4.6,"review":"从街市的城市更新走到旧警署建筑群，两站都适合慢看空间、展览与香港的层叠街道。","openingHours":"中环街市通常 10:00 起；大馆各空间开放时段不同","ticketPrice":"公共空间多为免费，特展另计","transport":{"mode":"港铁荃湾线至中环 / 香港站","fare":"约 HK$12–18","duration":"约 15–25 分钟"},"needsBooking":false,"leadDays":0},
-        {"period":"noon","name":"半山扶梯 · 上环散步","time":"12:00–16:30","lat":22.283664,"lng":114.154833,"photo":"","rating":4.5,"review":"沿扶梯、荷李活道、文武庙与上环老铺顺坡而行，把正午变成可随时进店避暑的城市漫步。","openingHours":"扶梯系统约 06:00–24:00，运行方向分时段","ticketPrice":"免费","transport":{"mode":"全程步行","fare":"免费","duration":"约 2–3 小时，含停留"},"needsBooking":false,"leadDays":0},
+        {"period":"morning","name":"中环街市 · 大馆","time":"09:00–12:00","lat":22.2813,"lng":114.154,"photo":"assets/photos/tai-kwun.jpg","rating":4.6,"review":"从街市的城市更新走到旧警署建筑群，两站都适合慢看空间、展览与香港的层叠街道。","openingHours":"中环街市通常 10:00 起；大馆各空间开放时段不同","ticketPrice":"公共空间多为免费，特展另计","transport":{"mode":"港铁荃湾线至中环 / 香港站","fare":"约 HK$12–18","duration":"约 15–25 分钟"},"needsBooking":false,"leadDays":0},
+        {"period":"noon","name":"半山扶梯 · 上环散步","time":"12:00–16:30","lat":22.283664,"lng":114.154833,"photo":"assets/photos/mid-levels-escalator.jpg","rating":4.5,"review":"沿扶梯、荷李活道、文武庙与上环老铺顺坡而行，把正午变成可随时进店避暑的城市漫步。","openingHours":"扶梯系统约 06:00–24:00，运行方向分时段","ticketPrice":"免费","transport":{"mode":"全程步行","fare":"免费","duration":"约 2–3 小时，含停留"},"needsBooking":false,"leadDays":0},
         {"period":"evening","name":"太平山顶 · 维港黄昏","time":"17:00–20:30","lat":22.27352,"lng":114.145231,"photo":"https://img.alicdn.com/imgextra/i1/6000000003521/O1CN01AQvFnRLmYYC4MOlS_!!6000000003521-0-fliggyimage.jpg","rating":4.7,"review":"在天光转蓝前抵达，先走免费观景位置，再按能见度决定是否购买摩天台；不要为一张夜景照卡死整晚。","openingHours":"山顶公共区域全天；缆车与摩天台以官网当日时段为准","ticketPrice":"FlyAI 当前双程缆车成人票约 ¥70 起","transport":{"mode":"山顶缆车 / 15 号巴士","fare":"巴士约 HK$13；缆车按票种","duration":"约 35–75 分钟，含排队","actionLink":{"label":"查看山顶票","url":"https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F4dAIng"}},"needsBooking":true,"leadDays":7}
       ],
       "dining":[
@@ -716,8 +731,8 @@
       ],
       "slots":[
         {"period":"morning","name":"啬色园黄大仙祠","time":"07:45–10:00","lat":22.345736,"lng":114.194195,"photo":"https://img.alicdn.com/imgextra/i1/6000000000288/O1CN019zWU6LQUPpD1s433_!!6000000000288-0-fliggyimage.jpg","rating":4.6,"review":"红柱、金瓦与香火构成强烈城市色彩，赶在旅行团高峰前进入，参观体验会安静很多。","openingHours":"通常早晨至傍晚，节假日以园方公告为准","ticketPrice":"免费；祈福用品自愿购买","transport":{"mode":"港铁观塘线黄大仙站","fare":"约 HK$10–18","duration":"约 30 分钟"},"needsBooking":false,"leadDays":0},
-        {"period":"noon","name":"九龙寨城公园","time":"10:45–14:30","lat":22.331944,"lng":114.19,"photo":"","rating":4.5,"review":"园林之下保留衙门、旧城门与城寨历史线索，节奏比商业景点安静，适合国庆中午避开主商圈。","openingHours":"公园通常 06:30–23:00，展馆时段另计","ticketPrice":"免费","transport":{"mode":"黄大仙乘巴士 / 出租车","fare":"约 HK$7–45","duration":"约 15–25 分钟"},"needsBooking":false,"leadDays":0},
-        {"period":"evening","name":"旺角 · 油麻地 · 庙街","time":"16:00–21:30","lat":22.30589,"lng":114.16987,"photo":"","rating":4.6,"review":"从花园街、金鱼街一路向南走到庙街，把九龙的商业密度、街市与夜生活连成一条线。","openingHours":"街区全天；摊档通常傍晚后较完整","ticketPrice":"免费","transport":{"mode":"巴士至旺角后向南步行","fare":"约 HK$8–15","duration":"步行游览约 3–4 小时"},"needsBooking":false,"leadDays":0}
+        {"period":"noon","name":"九龙寨城公园","time":"10:45–14:30","lat":22.331944,"lng":114.19,"photo":"assets/photos/kowloon-walled-city-park.jpg","rating":4.5,"review":"园林之下保留衙门、旧城门与城寨历史线索，节奏比商业景点安静，适合国庆中午避开主商圈。","openingHours":"公园通常 06:30–23:00，展馆时段另计","ticketPrice":"免费","transport":{"mode":"黄大仙乘巴士 / 出租车","fare":"约 HK$7–45","duration":"约 15–25 分钟"},"needsBooking":false,"leadDays":0},
+        {"period":"evening","name":"旺角 · 油麻地 · 庙街","time":"16:00–21:30","lat":22.30589,"lng":114.16987,"photo":"assets/photos/temple-street-night-market.jpg","rating":4.6,"review":"从花园街、金鱼街一路向南走到庙街，把九龙的商业密度、街市与夜生活连成一条线。","openingHours":"街区全天；摊档通常傍晚后较完整","ticketPrice":"免费","transport":{"mode":"巴士至旺角后向南步行","fare":"约 HK$8–15","duration":"步行游览约 3–4 小时"},"needsBooking":false,"leadDays":0}
       ],
       "dining":[
         {"meal":"午餐","place":"九龙城泰式餐厅就近选择","hours":"建议 11:30 入座","dishes":[{"name":"海南鸡饭","price":"约 HK$65–85"},{"name":"冬阴功汤","price":"约 HK$80–120"}]},
@@ -728,7 +743,7 @@
       "date":"2026-10-04","weekday":"周日","theme":"跨海 · 澳门历史城区与路氹灯火",
       "tips":["建议 07:30 从酒店出发，香港市区至香港口岸、过关、金巴与澳门接驳合计按 2.5–3 小时预留。","先在澳门酒店寄存行李，再走历史城区；晚间路氹只选一两个室内空间，不做酒店巡礼。"],
       "slots":[
-        {"period":"morning","name":"港珠澳大桥 · 香港至澳门","time":"07:30–10:30","lat":22.205,"lng":113.591,"photo":"","rating":4.6,"review":"从香港口岸乘穿梭巴士到澳门口岸，车程不长，真正需要留足的是市区接驳与两端出入境排队。","openingHours":"口岸与穿梭巴士运营以当日官方公告为准","ticketPrice":"日间金巴通常约 HK$65/人，节假日核实","transport":{"mode":"市区巴士 / 出租车 + 港珠澳大桥穿梭巴士","fare":"约 HK$80–160/人","duration":"约 2.5–3 小时"},"needsBooking":true,"leadDays":3},
+        {"period":"morning","name":"港珠澳大桥 · 香港至澳门","time":"07:30–10:30","lat":22.205,"lng":113.591,"photo":"assets/photos/hzmb.jpg","rating":4.6,"review":"从香港口岸乘穿梭巴士到澳门口岸，车程不长，真正需要留足的是市区接驳与两端出入境排队。","openingHours":"口岸与穿梭巴士运营以当日官方公告为准","ticketPrice":"日间金巴通常约 HK$65/人，节假日核实","transport":{"mode":"市区巴士 / 出租车 + 港珠澳大桥穿梭巴士","fare":"约 HK$80–160/人","duration":"约 2.5–3 小时"},"needsBooking":true,"leadDays":3},
         {"period":"noon","name":"议事亭前地 · 大三巴 · 大炮台","time":"11:00–16:00","lat":22.197502,"lng":113.540761,"photo":"https://img.alicdn.com/tfscom/TB1GO1Sa8Bh1e4jSZFhSuwC9VXa","rating":4.8,"review":"从葡式碎石路、教堂与街巷走向大三巴，再登大炮台看半岛屋顶；路线短，但国庆需要逆着主客流走。","openingHours":"广场全天；博物馆与室内空间时段各异","ticketPrice":"户外世遗节点免费","transport":{"mode":"澳门口岸接驳至半岛后步行","fare":"巴士约 MOP 6/次","duration":"约 30–45 分钟"},"actionLink":{"label":"查看大三巴资料","url":"https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0G2lJG"},"needsBooking":false,"leadDays":0},
         {"period":"evening","name":"东望洋 · 路氹夜景","time":"16:30–22:00","lat":22.140556,"lng":113.563056,"photo":"https://img.alicdn.com/imgextra/i3/6000000003666/O1CN017UiWbu1cx4vTQx53y_!!6000000003666-0-hotel.jpg","rating":4.6,"review":"傍晚先在东望洋一带看半岛地形，再乘轻轨或巴士去路氹；夜景只作为散步背景，不被室内消费动线绑架。","openingHours":"户外街区全天；各场馆与灯光时段另查","ticketPrice":"户外免费","transport":{"mode":"巴士 / 轻轨 / 酒店接驳","fare":"约 MOP 6–30","duration":"约 35–55 分钟"},"needsBooking":false,"leadDays":0}
       ],
@@ -741,9 +756,9 @@
       "date":"2026-10-05","weekday":"周一","theme":"氹仔与路环 · 从珠海夜归长沙",
       "tips":["D924 是全程硬约束：16:00 前从路环向关闸移动，17:30 左右抵达珠海站更稳。","若口岸实时排队超过预期，直接取消路环午后散步并提前进珠海。"],
       "slots":[
-        {"period":"morning","name":"龙环葡韵 · 官也街","time":"09:30–11:30","lat":22.15388,"lng":113.559615,"photo":"","rating":4.5,"review":"薄荷绿葡式住宅、湿地与老街距离很近，上午先看建筑，再进官也街吃一轮小食。","openingHours":"户外全天；住宅博物馆通常 10:00 起，周一安排须核实","ticketPrice":"户外免费，展馆以现场为准","transport":{"mode":"巴士 / 轻轨至氹仔","fare":"约 MOP 6–12","duration":"约 25–40 分钟"},"needsBooking":false,"leadDays":0},
-        {"period":"noon","name":"路环渔村 · 黑沙海岸","time":"12:00–15:30","lat":22.126111,"lng":113.566944,"photo":"","rating":4.5,"review":"把最后半天交给低密度的海边与旧村：安德鲁饼店、圣方济各教堂和海岸步道任选其二，不赶全套。","openingHours":"街区全天；店铺各自营业","ticketPrice":"免费","transport":{"mode":"氹仔乘巴士往路环","fare":"约 MOP 6/次","duration":"约 30–45 分钟"},"needsBooking":false,"leadDays":0},
-        {"period":"evening","name":"关闸 → 珠海站 → 长沙南","time":"16:00–22:57","lat":22.218333,"lng":113.545,"photo":"","rating":4.7,"review":"由澳门关闸过境后步行接珠海站，预留安检、候车与国庆排队时间；D924 19:10 发车，当晚 22:57 抵达长沙南。","openingHours":"口岸与铁路时刻以官方当日信息为准","ticketPrice":"D924 二等座当前参考 ¥288/人","transport":{"mode":"澳门巴士至关闸 + 步行过境 + D924","fare":"约 MOP 6 + ¥288/人","duration":"约 7 小时，含口岸缓冲","actionLink":{"label":"查看回程车次","url":"https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F4afiC0"}},"needsBooking":true,"leadDays":15}
+        {"period":"morning","name":"龙环葡韵 · 官也街","time":"09:30–11:30","lat":22.15388,"lng":113.559615,"photo":"assets/photos/taipa-houses.jpg","rating":4.5,"review":"薄荷绿葡式住宅、湿地与老街距离很近，上午先看建筑，再进官也街吃一轮小食。","openingHours":"户外全天；住宅博物馆通常 10:00 起，周一安排须核实","ticketPrice":"户外免费，展馆以现场为准","transport":{"mode":"巴士 / 轻轨至氹仔","fare":"约 MOP 6–12","duration":"约 25–40 分钟"},"needsBooking":false,"leadDays":0},
+        {"period":"noon","name":"路环渔村 · 黑沙海岸","time":"12:00–15:30","lat":22.126111,"lng":113.566944,"photo":"assets/photos/coloane-village.jpg","rating":4.5,"review":"把最后半天交给低密度的海边与旧村：安德鲁饼店、圣方济各教堂和海岸步道任选其二，不赶全套。","openingHours":"街区全天；店铺各自营业","ticketPrice":"免费","transport":{"mode":"氹仔乘巴士往路环","fare":"约 MOP 6/次","duration":"约 30–45 分钟"},"needsBooking":false,"leadDays":0},
+        {"period":"evening","name":"关闸 → 珠海站 → 长沙南","time":"16:00–22:57","lat":22.218333,"lng":113.545,"photo":"assets/photos/zhuhai-station.jpg","rating":4.7,"review":"由澳门关闸过境后步行接珠海站，预留安检、候车与国庆排队时间；D924 19:10 发车，当晚 22:57 抵达长沙南。","openingHours":"口岸与铁路时刻以官方当日信息为准","ticketPrice":"D924 二等座当前参考 ¥288/人","transport":{"mode":"澳门巴士至关闸 + 步行过境 + D924","fare":"约 MOP 6 + ¥288/人","duration":"约 7 小时，含口岸缓冲","actionLink":{"label":"查看回程车次","url":"https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F4afiC0"}},"needsBooking":true,"leadDays":15}
       ],
       "dining":[
         {"meal":"早午餐","place":"官也街小食组合","hours":"多数店铺约 10:00 后较完整","dishes":[{"name":"猪扒包","price":"约 MOP 35–55"},{"name":"木糠布甸","price":"约 MOP 30–45"}]},
@@ -947,7 +962,8 @@
     }).join('');
 
     document.getElementById('tips-list').innerHTML = trip.tips.map(function (tip) { return '<li>' + e(tip) + '</li>'; }).join('');
-    document.getElementById('source-list').innerHTML = '<strong>数据分层</strong><br>' + trip.dataSources.map(function (source) { return e(source.name + '：' + source.scope + (source.realtime ? '（搜索结果有时效性）' : '（静态参考）')); }).join('<br>');
+    var photoCredits = trip.photoCredits && trip.photoCredits.length ? '<details class="photo-credits"><summary>图片作者与许可（Wikimedia Commons）</summary><div class="photo-credit-grid">' + trip.photoCredits.map(function (credit) { return '<a href="' + e(credit.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + e(credit.place + ' · ' + credit.author + ' · ' + credit.license) + '</a>'; }).join('') + '</div></details>' : '';
+    document.getElementById('source-list').innerHTML = '<strong>数据分层</strong><br>' + trip.dataSources.map(function (source) { return e(source.name + '：' + source.scope + (source.realtime ? '（搜索结果有时效性）' : '（静态参考）')); }).join('<br>') + photoCredits;
 
     function refreshIcons() { if (window.lucide) window.lucide.createIcons({ attrs: { width: 18, height: 18, 'stroke-width': 2 } }); }
     refreshIcons();
